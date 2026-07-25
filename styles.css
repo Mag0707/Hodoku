@@ -625,3 +625,47 @@ h1,
   }
 }
 
+
+/* v7: three preparation cards and selective soft typography */
+.preparation-screen .screen-header h2,
+.preparation-screen .summary-time {
+  font-family: "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-weight: 500;
+}
+
+.preparation-screen .preparation-card {
+  margin: 6px 0;
+}
+
+.preparation-screen .bgm-card select {
+  margin-bottom: 10px;
+}
+
+.preparation-screen .nested-setting-label {
+  margin-top: 2px;
+}
+
+.preparation-screen .compact-preview-button {
+  min-height: 42px;
+  margin-top: 8px;
+}
+
+/* 3カード構成でも開始ボタンを画面下部へ */
+.preparation-screen #startSessionButton {
+  margin-top: auto;
+}
+
+@media (max-height: 760px) {
+  .preparation-screen .preparation-card {
+    margin: 3px 0;
+  }
+
+  .preparation-screen .bgm-card select {
+    margin-bottom: 6px;
+  }
+
+  .preparation-screen .compact-preview-button {
+    min-height: 40px;
+    margin-top: 5px;
+  }
+}

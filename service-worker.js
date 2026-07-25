@@ -1,4 +1,4 @@
-const CACHE_NAME = "hodoku-v6";
+const CACHE_NAME = "hodoku-v7";
 
 const APP_SHELL = [
   "./",

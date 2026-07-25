@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ほどく">
+  <title>ほどく</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="app">
+    <section id="homeScreen" class="screen active">
+      <button class="icon-button settings-button" id="openSettingsButton" aria-label="設定">⚙︎</button>
+
+      <div class="hero">
+        <p class="eyebrow">HODOKU</p>
+        <h1>ほどく</h1>
+        <p class="subtitle">一日の緊張を、眠る前にほどく。</p>
+      </div>
+
+      <div class="course-list" role="radiogroup" aria-label="コース">
+        <button class="course-card" data-course="03min" role="radio" aria-checked="false">
+          <span class="course-time">3分</span>
+          <strong>今すぐほどく</strong>
+          <small>疲れ切った夜に</small>
+        </button>
+
+        <button class="course-card selected" data-course="07min" role="radio" aria-checked="true">
+          <span class="badge">おすすめ</span>
+          <span class="course-time">7分</span>
+          <strong>一日の緊張をほどく</strong>
+          <small>普段使いの標準コース</small>
+        </button>
+
+        <button class="course-card" data-course="12min" role="radio" aria-checked="false">
+          <span class="course-time">12分</span>
+          <strong>深くほどく</strong>
+          <small>ゆっくり眠りに向かう夜に</small>
+        </button>
+      </div>
+
+      <button class="primary-button" id="goToPreparationButton">始める</button>
+    </section>
+
+    <section id="preparationScreen" class="screen">
+      <header class="screen-header">
+        <button class="back-button" id="backToHomeButton">‹ 戻る</button>
+        <h2>準備</h2>
+      </header>
+
+      <div class="summary-card">
+        <p id="selectedCourseTime" class="summary-time">7分</p>
+        <h3 id="selectedCourseTitle">一日の緊張をほどく</h3>
+      </div>
+
+      <fieldset class="setting-group">
+        <legend>BGM</legend>
+        <label class="radio-row">
+          <input type="radio" name="bgm" value="quiet-rain" checked>
+          <span>静かな雨</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="bgm" value="midnight-ambient">
+          <span>深夜のアンビエント</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="bgm" value="none">
+          <span>BGMなし</span>
+        </label>
+      </fieldset>
+
+      <div class="setting-group">
+        <label for="guideVolume">ガイダンス音量 <output id="guideVolumeValue">80%</output></label>
+        <input id="guideVolume" type="range" min="0" max="100" value="80">
+      </div>
+
+      <div class="setting-group">
+        <label for="bgmVolume">BGM音量 <output id="bgmVolumeValue">25%</output></label>
+        <input id="bgmVolume" type="range" min="0" max="100" value="25">
+      </div>
+
+      <div class="setting-group">
+        <label for="afterBgmMinutes">ガイダンス終了後のBGM</label>
+        <select id="afterBgmMinutes">
+          <option value="0">すぐ停止</option>
+          <option value="5">5分</option>
+          <option value="10" selected>10分</option>
+          <option value="15">15分</option>
+          <option value="30">30分</option>
+        </select>
+      </div>
+
+      <button class="secondary-button" id="previewBgmButton">BGMを試聴</button>
+      <button class="primary-button" id="startSessionButton">開始</button>
+    </section>
+
+    <section id="sessionScreen" class="screen session-screen">
+      <div class="session-content">
+        <p id="sessionPhase" class="session-phase">ガイダンス中</p>
+        <h2 id="sessionText">ゆっくり、力を抜いていきます。</h2>
+        <p id="sessionElapsed" class="session-time">00:00</p>
+        <div class="breathing-orb" aria-hidden="true"></div>
+      </div>
+
+      <div class="session-controls">
+        <button class="secondary-button" id="pauseButton">一時停止</button>
+        <button class="text-button danger" id="stopButton">終了する</button>
+      </div>
+    </section>
+
+    <section id="completionScreen" class="screen completion-screen">
+      <div class="completion-content">
+        <p class="eyebrow">SESSION COMPLETE</p>
+        <h2>今日の分は、ここまでです。</h2>
+        <p>眠れなくても大丈夫です。<br>今は、身体を休ませるだけで十分です。</p>
+      </div>
+      <button class="primary-button" id="returnHomeButton">ホームへ戻る</button>
+    </section>
+
+    <section id="settingsScreen" class="screen">
+      <header class="screen-header">
+        <button class="back-button" id="closeSettingsButton">‹ 戻る</button>
+        <h2>設定</h2>
+      </header>
+
+      <div class="setting-group">
+        <label class="toggle-row">
+          <span>再生中の画面ロックを防ぐ</span>
+          <input id="wakeLockEnabled" type="checkbox" checked>
+        </label>
+      </div>
+
+      <div class="setting-group">
+        <label class="toggle-row">
+          <span>残りの操作を暗く表示する</span>
+          <input id="darkSessionEnabled" type="checkbox" checked>
+        </label>
+      </div>
+
+      <p class="note">
+        音声はAIによって生成されています。設定はこの端末内に保存されます。
+      </p>
+    </section>
+  </main>
+
+  <audio id="guideAudio" preload="auto"></audio>
+  <audio id="bgmAudio" preload="auto"></audio>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

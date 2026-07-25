@@ -1,4 +1,3 @@
-\
 const COURSE_META = {
   "03min": {
     time: "3分",

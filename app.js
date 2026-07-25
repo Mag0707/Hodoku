@@ -20,8 +20,8 @@ const COURSE_META = {
 };
 
 const BGM_TRACKS = {
-  "quiet-rain": "./audio/bgm/gigidelaromusic-peaceful-light-ray-short-450966.mp3",
-  "midnight-ambient": "./audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3",
+  "quiet-rain": "./audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3",
+  "midnight-ambient": "./audio/bgm/gigidelaromusic-peaceful-light-ray-short-450966.mp3",
 };
 
 const screens = [...document.querySelectorAll(".screen")];
@@ -405,7 +405,9 @@ async function toggleBgmPreview() {
     }, 10000);
   } catch (error) {
     console.error(error);
-    alert("BGMを再生できませんでした。");
+    const selected = document.querySelector('input[name="bgm"]:checked')?.value || "none";
+    const path = BGM_TRACKS[selected] || "BGMなし";
+    alert(`BGMを再生できませんでした。\n参照先: ${path}`);
   }
 }
 

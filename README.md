@@ -94,7 +94,7 @@ audio/guidance/manifests/messages.json
 Service Workerのキャッシュ名は、`service-worker.js` 内の次の値で管理します。
 
 ```javascript
-const CACHE_NAME = "hodoku-v5";
+const CACHE_NAME = "hodoku-v6";
 ```
 
 HTML、CSS、JavaScript、JSON、音声などを更新した際に古い内容が残る場合は、次のようにバージョン番号を変更してください。
@@ -237,7 +237,7 @@ Example:
 The Service Worker cache name is defined in `service-worker.js`:
 
 ```javascript
-const CACHE_NAME = "hodoku-v5";
+const CACHE_NAME = "hodoku-v6";
 ```
 
 After updating HTML, CSS, JavaScript, JSON, or audio files, change the version number if an older cached version remains active:

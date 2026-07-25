@@ -461,15 +461,21 @@ body.session-dimmed .session-controls:hover {
 .switch input:checked + .switch-slider::after { transform: translateX(20px); }
 body.modal-open { overflow: hidden; }
 
-/* v5: Zen Maru Gothic and compact preparation screen */
-html, body,
-button, input, select {
-  font-family: "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+/* v6: selective Zen Maru Gothic and balanced preparation screen */
+html,
+body,
+button,
+input,
+select {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
 }
 
+/* 柔らかいフォントは、タイトル・ガイダンス・終了時のねぎらいだけに使用 */
 h1,
 .session-content h2,
-.completion-content h2 {
+.completion-content h2,
+.completion-content p:not(.eyebrow) {
+  font-family: "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
   font-weight: 500;
 }
 
@@ -495,30 +501,30 @@ h1,
   min-height: 100dvh;
   height: 100dvh;
   overflow: hidden;
-  padding-top: max(12px, env(safe-area-inset-top));
-  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
 }
 
 .preparation-screen .screen-header {
-  min-height: 40px;
-  margin-bottom: 2px;
+  min-height: 44px;
+  margin-bottom: 8px;
 }
 
 .preparation-screen .screen-header h2 {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .preparation-screen .back-button {
-  min-height: 40px;
-  padding: 6px 0;
+  min-height: 44px;
+  padding: 8px 0;
 }
 
 .preparation-screen .compact-course-summary {
   border: 0;
   background: transparent;
   padding: 0;
-  margin: 0 0 4px;
+  margin: 4px 0 12px;
   text-align: center;
 }
 
@@ -526,18 +532,18 @@ h1,
   margin: 0;
   font-size: 28px;
   line-height: 1.25;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: .03em;
 }
 
 .preparation-screen .setting-group {
-  margin: 4px 0;
-  padding: 10px 14px;
+  margin: 5px 0;
+  padding: 11px 14px;
   border-radius: 18px;
 }
 
 .preparation-screen .setting-group > label:not(.radio-row):not(.toggle-row) {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   font-size: 14px;
 }
 
@@ -581,15 +587,30 @@ h1,
 }
 
 .preparation-screen .secondary-button {
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
+/* 開始ボタンをセーフエリア直上の画面下部へ配置 */
 .preparation-screen .primary-button {
-  margin-top: 6px;
+  margin-top: auto;
 }
 
 @media (max-height: 760px) {
+  .preparation-screen {
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .preparation-screen .screen-header {
+    margin-bottom: 2px;
+  }
+
+  .preparation-screen .compact-course-summary {
+    margin-bottom: 5px;
+  }
+
   .preparation-screen .setting-group {
+    margin: 3px 0;
     padding-top: 8px;
     padding-bottom: 8px;
   }
@@ -603,3 +624,4 @@ h1,
     min-height: 44px;
   }
 }
+

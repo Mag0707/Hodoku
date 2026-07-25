@@ -25,6 +25,7 @@ const BGM_TRACKS = {
 };
 
 const screens = [...document.querySelectorAll(".screen")];
+const settingsModal = document.getElementById("settingsModal");
 const guideAudio = document.getElementById("guideAudio");
 const bgmAudio = document.getElementById("bgmAudio");
 
@@ -66,7 +67,7 @@ function updateElapsed() {
 }
 
 function saveSettings() {
-  const selectedBgm = document.querySelector('input[name="bgm"]:checked')?.value || "none";
+  const selectedBgm = document.getElementById("bgmSelect").value;
   localStorage.setItem("hodoku.course", state.selectedCourse);
   localStorage.setItem("hodoku.bgm", selectedBgm);
   localStorage.setItem("hodoku.guideVolume", document.getElementById("guideVolume").value);
@@ -90,8 +91,7 @@ function restoreSettings() {
   document.getElementById("wakeLockEnabled").checked = wakeLockEnabled;
   document.getElementById("darkSessionEnabled").checked = darkSessionEnabled;
 
-  const bgmRadio = document.querySelector(`input[name="bgm"][value="${selectedBgm}"]`);
-  if (bgmRadio) bgmRadio.checked = true;
+  document.getElementById("bgmSelect").value = selectedBgm;
 
   selectCourse(state.selectedCourse, false);
 }
@@ -189,7 +189,7 @@ function setBgmVolume() {
 }
 
 async function startBgm() {
-  const selected = document.querySelector('input[name="bgm"]:checked')?.value || "none";
+  const selected = document.getElementById("bgmSelect").value;
   if (selected === "none") {
     bgmAudio.pause();
     bgmAudio.removeAttribute("src");
@@ -405,7 +405,7 @@ async function toggleBgmPreview() {
     }, 10000);
   } catch (error) {
     console.error(error);
-    const selected = document.querySelector('input[name="bgm"]:checked')?.value || "none";
+    const selected = document.getElementById("bgmSelect").value;
     const path = BGM_TRACKS[selected] || "BGMなし";
     alert(`BGMを再生できませんでした。\n参照先: ${path}`);
   }
@@ -425,13 +425,26 @@ document.getElementById("backToHomeButton").addEventListener("click", () => {
   showScreen("homeScreen");
 });
 
-document.getElementById("openSettingsButton").addEventListener("click", () => {
-  showScreen("settingsScreen");
-});
+function openSettingsModal() {
+  settingsModal.hidden = false;
+  document.body.classList.add("modal-open");
+  document.getElementById("closeSettingsButton").focus();
+}
 
-document.getElementById("closeSettingsButton").addEventListener("click", () => {
+function closeSettingsModal() {
   saveSettings();
-  showScreen("homeScreen");
+  settingsModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  document.getElementById("openSettingsButton").focus();
+}
+
+document.getElementById("openSettingsButton").addEventListener("click", openSettingsModal);
+document.getElementById("closeSettingsButton").addEventListener("click", closeSettingsModal);
+settingsModal.addEventListener("click", (event) => {
+  if (event.target === settingsModal) closeSettingsModal();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !settingsModal.hidden) closeSettingsModal();
 });
 
 document.getElementById("startSessionButton").addEventListener("click", startSession);
@@ -452,18 +465,37 @@ document.getElementById("bgmVolume").addEventListener("input", (event) => {
   saveSettings();
 });
 
-document.querySelectorAll('input[name="bgm"]').forEach((radio) => {
-  radio.addEventListener("change", () => {
-    if (state.previewing) {
-      stopBgm();
-      state.previewing = false;
-      document.getElementById("previewBgmButton").textContent = "BGMを試聴";
-    }
-    saveSettings();
-  });
+document.getElementById("bgmSelect").addEventListener("change", () => {
+  if (state.previewing) {
+    stopBgm();
+    state.previewing = false;
+    document.getElementById("previewBgmButton").textContent = "BGMを試聴";
+  }
+  saveSettings();
 });
 
-document.getElementById("afterBgmMinutes").addEventListener("change", saveSettings);
+function normalizeAfterBgmMinutes(value) {
+  const number = Number.parseInt(value, 10);
+  if (!Number.isFinite(number)) return 0;
+  return Math.min(120, Math.max(0, number));
+}
+
+function updateAfterBgmMinutes(delta) {
+  const input = document.getElementById("afterBgmMinutes");
+  input.value = String(normalizeAfterBgmMinutes(input.value) + delta);
+  input.value = String(normalizeAfterBgmMinutes(input.value));
+  saveSettings();
+}
+
+document.getElementById("afterBgmMinus").addEventListener("click", () => updateAfterBgmMinutes(-1));
+document.getElementById("afterBgmPlus").addEventListener("click", () => updateAfterBgmMinutes(1));
+document.getElementById("afterBgmMinutes").addEventListener("input", (event) => {
+  if (event.target.value !== "") saveSettings();
+});
+document.getElementById("afterBgmMinutes").addEventListener("blur", (event) => {
+  event.target.value = String(normalizeAfterBgmMinutes(event.target.value));
+  saveSettings();
+});
 document.getElementById("wakeLockEnabled").addEventListener("change", saveSettings);
 document.getElementById("darkSessionEnabled").addEventListener("change", saveSettings);
 

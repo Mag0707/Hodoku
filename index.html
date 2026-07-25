@@ -58,21 +58,14 @@
         <h3 id="selectedCourseTitle">一日の緊張をほどく</h3>
       </div>
 
-      <fieldset class="setting-group">
-        <legend>BGM</legend>
-        <label class="radio-row">
-          <input type="radio" name="bgm" value="quiet-rain" checked>
-          <span>静かな雨</span>
-        </label>
-        <label class="radio-row">
-          <input type="radio" name="bgm" value="midnight-ambient">
-          <span>深夜のアンビエント</span>
-        </label>
-        <label class="radio-row">
-          <input type="radio" name="bgm" value="none">
-          <span>BGMなし</span>
-        </label>
-      </fieldset>
+      <div class="setting-group">
+        <label for="bgmSelect">BGM</label>
+        <select id="bgmSelect">
+          <option value="quiet-rain">静かな雨</option>
+          <option value="midnight-ambient">深夜のアンビエント</option>
+          <option value="none">BGMなし</option>
+        </select>
+      </div>
 
       <div class="setting-group">
         <label for="guideVolume">ガイダンス音量 <output id="guideVolumeValue">80%</output></label>
@@ -86,13 +79,15 @@
 
       <div class="setting-group">
         <label for="afterBgmMinutes">ガイダンス終了後のBGM</label>
-        <select id="afterBgmMinutes">
-          <option value="0">すぐ停止</option>
-          <option value="5">5分</option>
-          <option value="10" selected>10分</option>
-          <option value="15">15分</option>
-          <option value="30">30分</option>
-        </select>
+        <div class="number-stepper">
+          <button type="button" id="afterBgmMinus" class="stepper-button" aria-label="1分減らす">−</button>
+          <div class="number-input-wrap">
+            <input id="afterBgmMinutes" type="number" min="0" max="120" step="1" inputmode="numeric" value="10">
+            <span>分</span>
+          </div>
+          <button type="button" id="afterBgmPlus" class="stepper-button" aria-label="1分増やす">＋</button>
+        </div>
+        <p class="setting-help">0〜120分で直接入力できます。0分でガイダンス終了と同時に停止します。</p>
       </div>
 
       <button class="secondary-button" id="previewBgmButton">BGMを試聴</button>
@@ -122,30 +117,46 @@
       <button class="primary-button" id="returnHomeButton">ホームへ戻る</button>
     </section>
 
-    <section id="settingsScreen" class="screen">
-      <header class="screen-header">
-        <button class="back-button" id="closeSettingsButton">‹ 戻る</button>
-        <h2>設定</h2>
-      </header>
 
-      <div class="setting-group">
-        <label class="toggle-row">
-          <span>再生中の画面ロックを防ぐ</span>
-          <input id="wakeLockEnabled" type="checkbox" checked>
-        </label>
-      </div>
 
-      <div class="setting-group">
-        <label class="toggle-row">
-          <span>残りの操作を暗く表示する</span>
-          <input id="darkSessionEnabled" type="checkbox" checked>
-        </label>
-      </div>
 
-      <p class="note">
-        音声はAIによって生成されています。設定はこの端末内に保存されます。
-      </p>
-    </section>
+    <div id="settingsModal" class="modal-backdrop" hidden>
+      <section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+        <header class="modal-header">
+          <h2 id="settingsModalTitle">設定</h2>
+          <button type="button" class="modal-close-button" id="closeSettingsButton" aria-label="設定を閉じる">×</button>
+        </header>
+
+        <div class="modal-body">
+          <div class="modal-setting-row">
+            <div>
+              <strong>画面ロックを防ぐ</strong>
+              <small>音声の再生中は画面を点灯したままにします。</small>
+            </div>
+            <label class="switch">
+              <input id="wakeLockEnabled" type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <div class="modal-setting-row">
+            <div>
+              <strong>再生画面を暗くする</strong>
+              <small>操作ボタンを目立たなくし、光を抑えます。</small>
+            </div>
+            <label class="switch">
+              <input id="darkSessionEnabled" type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <div class="modal-note">
+            <p>音声はAIによって生成されています。</p>
+            <p>設定はこの端末内に保存されます。</p>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <audio id="guideAudio" preload="auto"></audio>

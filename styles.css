@@ -582,7 +582,7 @@ h1,
 
 .preparation-screen .secondary-button,
 .preparation-screen .primary-button {
-  min-height: 48px;
+  min-height: 56px;
   border-radius: 16px;
 }
 
@@ -621,7 +621,7 @@ h1,
 
   .preparation-screen .secondary-button,
   .preparation-screen .primary-button {
-    min-height: 44px;
+    min-height: 56px;
   }
 }
 
@@ -668,4 +668,24 @@ h1,
     min-height: 40px;
     margin-top: 5px;
   }
+}
+
+
+/* v8: control height alignment */
+.primary-button,
+.secondary-button {
+  height: 56px;
+  min-height: 56px;
+  padding-block: 0;
+}
+
+#bgmSelect,
+#previewBgmButton {
+  height: 48px;
+  min-height: 48px;
+}
+
+#bgmSelect {
+  padding-top: 0;
+  padding-bottom: 0;
 }

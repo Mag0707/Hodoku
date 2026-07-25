@@ -460,3 +460,146 @@ body.session-dimmed .session-controls:hover {
 .switch input:checked + .switch-slider { background: var(--accent); }
 .switch input:checked + .switch-slider::after { transform: translateX(20px); }
 body.modal-open { overflow: hidden; }
+
+/* v5: Zen Maru Gothic and compact preparation screen */
+html, body,
+button, input, select {
+  font-family: "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+h1,
+.session-content h2,
+.completion-content h2 {
+  font-weight: 500;
+}
+
+.course-card strong,
+.primary-button,
+.secondary-button {
+  font-weight: 700;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.preparation-screen {
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.preparation-screen .screen-header {
+  min-height: 40px;
+  margin-bottom: 2px;
+}
+
+.preparation-screen .screen-header h2 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.preparation-screen .back-button {
+  min-height: 40px;
+  padding: 6px 0;
+}
+
+.preparation-screen .compact-course-summary {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.preparation-screen .summary-time {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+.preparation-screen .setting-group {
+  margin: 4px 0;
+  padding: 10px 14px;
+  border-radius: 18px;
+}
+
+.preparation-screen .setting-group > label:not(.radio-row):not(.toggle-row) {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.preparation-screen select {
+  min-height: 40px;
+  border-radius: 12px;
+}
+
+.preparation-screen input[type="range"] {
+  display: block;
+  height: 22px;
+  margin: 0;
+}
+
+.preparation-screen .number-stepper {
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: 8px;
+}
+
+.preparation-screen .stepper-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  font-size: 22px;
+}
+
+.preparation-screen .number-input-wrap {
+  min-height: 44px;
+  border-radius: 13px;
+  padding: 0 12px;
+}
+
+.preparation-screen .number-input-wrap input {
+  font-size: 19px;
+}
+
+.preparation-screen .secondary-button,
+.preparation-screen .primary-button {
+  min-height: 48px;
+  border-radius: 16px;
+}
+
+.preparation-screen .secondary-button {
+  margin-top: 5px;
+}
+
+.preparation-screen .primary-button {
+  margin-top: 6px;
+}
+
+@media (max-height: 760px) {
+  .preparation-screen .setting-group {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .preparation-screen .summary-time {
+    font-size: 25px;
+  }
+
+  .preparation-screen .secondary-button,
+  .preparation-screen .primary-button {
+    min-height: 44px;
+  }
+}

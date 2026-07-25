@@ -94,13 +94,13 @@ audio/guidance/manifests/messages.json
 Service Workerのキャッシュ名は、`service-worker.js` 内の次の値で管理します。
 
 ```javascript
-const CACHE_NAME = "hodoku-v4";
+const CACHE_NAME = "hodoku-v5";
 ```
 
 HTML、CSS、JavaScript、JSON、音声などを更新した際に古い内容が残る場合は、次のようにバージョン番号を変更してください。
 
 ```javascript
-const CACHE_NAME = "hodoku-v2";
+const CACHE_NAME = "hodoku-v6";
 ```
 
 ### BGMクレジット
@@ -117,9 +117,18 @@ const CACHE_NAME = "hodoku-v2";
 - URL：https://pixabay.com/users/gigidelaromusic-51134264/
 - 使用ファイル：`audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3`
 
+### フォントクレジット
+
+#### Zen Maru Gothic
+
+- 提供：Yoshimichi Ohira
+- URL：https://fonts.google.com/specimen/Zen+Maru+Gothic
+- ライセンス：SIL Open Font License 1.1
+- 使用箇所：アプリ内のタイトル、ガイダンスメッセージ、設定、ボタンなどの表示文字
+
 ### ライセンスについて
 
-BGMはPixabayから取得した素材を使用しています。
+BGMはPixabayから取得した素材を使用しています。Zen Maru GothicはSIL Open Font License 1.1に基づいて使用しています。
 
 公開・配布前に、使用時点のPixabay Content Licenseと各素材ページの条件を確認してください。
 
@@ -228,13 +237,13 @@ Example:
 The Service Worker cache name is defined in `service-worker.js`:
 
 ```javascript
-const CACHE_NAME = "hodoku-v4";
+const CACHE_NAME = "hodoku-v5";
 ```
 
 After updating HTML, CSS, JavaScript, JSON, or audio files, change the version number if an older cached version remains active:
 
 ```javascript
-const CACHE_NAME = "hodoku-v2";
+const CACHE_NAME = "hodoku-v6";
 ```
 
 ### Background music credits
@@ -251,9 +260,18 @@ const CACHE_NAME = "hodoku-v2";
 - URL: https://pixabay.com/users/gigidelaromusic-51134264/
 - File used: `audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3`
 
+### Font credit
+
+#### Zen Maru Gothic
+
+- Creator: Yoshimichi Ohira
+- URL: https://fonts.google.com/specimen/Zen+Maru+Gothic
+- License: SIL Open Font License 1.1
+- Used for: Titles, guidance messages, settings, buttons, and other interface text
+
 ### Licensing
 
-The background music was obtained from Pixabay.
+The background music was obtained from Pixabay. Zen Maru Gothic is used under the SIL Open Font License 1.1.
 
 Before publishing or redistributing the app, review the current Pixabay Content License and the conditions shown on each asset page.
 

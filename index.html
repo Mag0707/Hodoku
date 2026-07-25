@@ -8,6 +8,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ほどく">
   <title>ほどく</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="stylesheet" href="./styles.css">
@@ -47,15 +50,15 @@
       <button class="primary-button" id="goToPreparationButton">始める</button>
     </section>
 
-    <section id="preparationScreen" class="screen">
+    <section id="preparationScreen" class="screen preparation-screen">
       <header class="screen-header">
         <button class="back-button" id="backToHomeButton">‹ 戻る</button>
         <h2>準備</h2>
       </header>
 
-      <div class="summary-card">
+      <div class="summary-card compact-course-summary" aria-label="選択中のコース">
         <p id="selectedCourseTime" class="summary-time">7分</p>
-        <h3 id="selectedCourseTitle">一日の緊張をほどく</h3>
+        <h3 id="selectedCourseTitle" class="visually-hidden">一日の緊張をほどく</h3>
       </div>
 
       <div class="setting-group">
@@ -87,7 +90,6 @@
           </div>
           <button type="button" id="afterBgmPlus" class="stepper-button" aria-label="1分増やす">＋</button>
         </div>
-        <p class="setting-help">0〜120分で直接入力できます。0分でガイダンス終了と同時に停止します。</p>
       </div>
 
       <button class="secondary-button" id="previewBgmButton">BGMを試聴</button>

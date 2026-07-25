@@ -1,0 +1,152 @@
+{
+  "03min": [
+    {
+      "id": "03min-message-01",
+      "file": "../messages/03min-01.mp3",
+      "text": "今日うまくできなかったことより、今日ここまで来たことを大切にしましょう。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "03min-message-02",
+      "file": "../messages/03min-02.mp3",
+      "text": "誰かに見えていなくても、今日使った力は、確かにあなたの中に残っています。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "03min-message-03",
+      "file": "../messages/03min-03.mp3",
+      "text": "今日は今日なりに、十分にやりました。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "03min-message-04",
+      "file": "../messages/03min-04.mp3",
+      "text": "まだ気になることがあっても、今夜のあなたが全部背負う必要はありません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "03min-message-05",
+      "file": "../messages/03min-05.mp3",
+      "text": "今日の自分に厳しい言葉を向けるのは、今だけ少し休みにしましょう。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "03min-message-06",
+      "file": "../messages/03min-06.mp3",
+      "text": "何も達成した気がしない日にも、身体は一日を生き抜いています。",
+      "wait_ms": 4500
+    }
+  ],
+  "07min": [
+    {
+      "id": "07min-message-01",
+      "file": "../messages/07min-01.mp3",
+      "text": "今日、誰にも褒められなかったとしても、あなたが使った力はなくなりません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-02",
+      "file": "../messages/07min-02.mp3",
+      "text": "できなかったことだけで、今日一日の価値は決まりません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-03",
+      "file": "../messages/07min-03.mp3",
+      "text": "あなたが気づいていないところでも、今日きちんと耐え、考え、動いた時間があります。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-04",
+      "file": "../messages/07min-04.mp3",
+      "text": "今日の自分を評価する作業は、明日以降に回して構いません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-05",
+      "file": "../messages/07min-05.mp3",
+      "text": "今日は、これ以上よくしようとしなくて大丈夫です。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-06",
+      "file": "../messages/07min-06.mp3",
+      "text": "誰かに向けた優しさと同じものを、今は少し自分にも向けましょう。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-07",
+      "file": "../messages/07min-07.mp3",
+      "text": "今日の反省より先に、今日を終えられたことを認めましょう。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "07min-message-08",
+      "file": "../messages/07min-08.mp3",
+      "text": "明日のあなたに任せてもよいことは、明日のあなたに渡しましょう。",
+      "wait_ms": 4500
+    }
+  ],
+  "12min": [
+    {
+      "id": "12min-message-01",
+      "file": "../messages/12min-01.mp3",
+      "text": "目立つ成果がなかった日にも、あなたは一日分の力を使っています。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-02",
+      "file": "../messages/12min-02.mp3",
+      "text": "今日の自分に納得できなくても、休む資格がなくなることはありません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-03",
+      "file": "../messages/12min-03.mp3",
+      "text": "誰かの期待に応えられたかどうかと、今夜休んでよいかどうかは別のことです。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-04",
+      "file": "../messages/12min-04.mp3",
+      "text": "うまくできなかった場面を繰り返しても、今夜中に答えが出るとは限りません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-05",
+      "file": "../messages/12min-05.mp3",
+      "text": "明日のあなたは、今夜休んだ分だけ、少し広い視野を持てるかもしれません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-06",
+      "file": "../messages/12min-06.mp3",
+      "text": "今日、誰かのために使った力を、最後に少しだけ自分へ戻しましょう。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-07",
+      "file": "../messages/12min-07.mp3",
+      "text": "あなたが感じている疲れには、疲れるだけの理由があります。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-08",
+      "file": "../messages/12min-08.mp3",
+      "text": "何もしていないように感じる時間にも、身体はずっとあなたを支えていました。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-09",
+      "file": "../messages/12min-09.mp3",
+      "text": "今日を完全に納得して終える必要はありません。",
+      "wait_ms": 4500
+    },
+    {
+      "id": "12min-message-10",
+      "file": "../messages/12min-10.mp3",
+      "text": "不完全なまま一日を閉じても大丈夫です。",
+      "wait_ms": 4500
+    }
+  ]
+}

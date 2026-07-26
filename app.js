@@ -98,7 +98,61 @@ function restoreSettings() {
 
 function selectCourse(course, save = true) {
   state.selectedCourse = course;
-  document.querySelectorAll(".course-card").forEach((card) => {
+  
+const GUIDANCE_MODE_KEY = "hodoku.guidanceMode";
+
+function getAutomaticGuidanceMode(date = new Date()) {
+  const hour = date.getHours();
+  return hour >= 7 && hour < 20 ? "day" : "night";
+}
+
+function getGuidancePreference() {
+  const saved = localStorage.getItem(GUIDANCE_MODE_KEY);
+  return ["auto", "day", "night"].includes(saved) ? saved : "auto";
+}
+
+function getResolvedGuidanceMode() {
+  const preference = getGuidancePreference();
+  return preference === "auto" ? getAutomaticGuidanceMode() : preference;
+}
+
+function refreshGuidanceModeUi() {
+  const resolved = getResolvedGuidanceMode();
+  const label = document.getElementById("guidanceModeLabel");
+  if (label) label.textContent = resolved === "day" ? "昼用" : "夜用";
+
+  const preference = getGuidancePreference();
+  document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
+    button.classList.toggle("is-selected", button.dataset.guidanceMode === preference);
+  });
+}
+
+function openGuidanceModeSheet() {
+  refreshGuidanceModeUi();
+  document.getElementById("guidanceModeSheet").hidden = false;
+}
+
+function closeGuidanceModeSheet() {
+  document.getElementById("guidanceModeSheet").hidden = true;
+}
+
+document.getElementById("guidanceModeButton").addEventListener("click", openGuidanceModeSheet);
+document.getElementById("closeGuidanceModeSheet").addEventListener("click", closeGuidanceModeSheet);
+
+document.getElementById("guidanceModeSheet").addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) closeGuidanceModeSheet();
+});
+
+document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
+  button.addEventListener("click", () => {
+    localStorage.setItem(GUIDANCE_MODE_KEY, button.dataset.guidanceMode);
+    refreshGuidanceModeUi();
+    closeGuidanceModeSheet();
+  });
+});
+
+
+document.querySelectorAll(".course-card").forEach((card) => {
     const selected = card.dataset.course === course;
     card.classList.toggle("selected", selected);
     card.setAttribute("aria-checked", String(selected));
@@ -155,23 +209,40 @@ function pickRandom(items, count) {
 }
 
 async function buildQueue(course) {
+  const mode = getResolvedGuidanceMode();
+
+  const coursePath = mode === "day"
+    ? `./audio/guidance/manifests/day-${course}.json`
+    : `./audio/guidance/manifests/${course}.json`;
+
+  const messagesPath = mode === "day"
+    ? "./audio/guidance/manifests/day-messages.json"
+    : "./audio/guidance/manifests/messages.json";
+
   const [courseManifest, messagesManifest] = await Promise.all([
-    fetchJson(`./audio/guidance/manifests/${course}.json`),
-    fetchJson("./audio/guidance/manifests/messages.json"),
+    fetchJson(coursePath),
+    fetchJson(messagesPath),
   ]);
 
   const baseItems = courseManifest.items.map((item) => ({
     ...item,
-    file: `./audio/guidance/${course}/${item.file.split("/").pop()}`,
+    file: mode === "day"
+      ? `./audio/guidance/day/${course}/${item.file.split("/").pop()}`
+      : `./audio/guidance/${course}/${item.file.split("/").pop()}`,
   }));
 
   const messageCount = COURSE_META[course].randomMessages;
-  const selectedMessages = pickRandom(messagesManifest[course] || [], messageCount).map((item) => ({
+  const messageSource = mode === "day"
+    ? (messagesManifest.groups?.[course] || messagesManifest[course] || [])
+    : (messagesManifest[course] || messagesManifest.groups?.[course] || []);
+
+  const selectedMessages = pickRandom(messageSource, messageCount).map((item) => ({
     ...item,
-    file: `./audio/guidance/messages/${item.file.split("/").pop()}`,
+    file: mode === "day"
+      ? `./audio/guidance/day/messages/${item.file.split("/").pop()}`
+      : `./audio/guidance/messages/${item.file.split("/").pop()}`,
   }));
 
-  // 最後の2文の直前に、ランダムねぎらいを差し込みます。
   const insertAt = Math.max(0, baseItems.length - 2);
   return [
     ...baseItems.slice(0, insertAt),
@@ -417,6 +488,7 @@ document.querySelectorAll(".course-card").forEach((card) => {
 
 document.getElementById("goToPreparationButton").addEventListener("click", () => {
   selectCourse(state.selectedCourse, false);
+  refreshGuidanceModeUi();
   showScreen("preparationScreen");
 });
 
@@ -522,6 +594,7 @@ if ("serviceWorker" in navigator) {
 }
 
 restoreSettings();
+refreshGuidanceModeUi();
 showScreen("homeScreen");
 
 

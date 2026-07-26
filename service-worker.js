@@ -1,4 +1,4 @@
-const CACHE_NAME = "hodoku-v14";
+const CACHE_NAME = "hodoku-v15";
 
 const APP_SHELL = [
   "./",
@@ -12,6 +12,10 @@ const APP_SHELL = [
   "./audio/guidance/manifests/07min.json",
   "./audio/guidance/manifests/12min.json",
   "./audio/guidance/manifests/messages.json",
+  "./audio/guidance/manifests/day-messages.json",
+  "./audio/guidance/manifests/day-12min.json",
+  "./audio/guidance/manifests/day-07min.json",
+  "./audio/guidance/manifests/day-03min.json",
   "./audio/bgm/gigidelaromusic-peaceful-light-ray-short-450966.mp3",
   "./audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3",
 ];

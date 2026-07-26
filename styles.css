@@ -691,118 +691,58 @@ h1,
 }
 
 
-/* v9: calm starfield on home and preparation screens only */
+
+
+
+/* v10: Canvas starfield on home/preparation only */
 #homeScreen,
-#prepScreen {
+#preparationScreen {
   position: relative;
   overflow: hidden;
   isolation: isolate;
   background: linear-gradient(180deg, #080d1a 0%, #0b1121 48%, #090e1a 100%);
 }
 
-#homeScreen > :not(.starfield),
-#prepScreen > :not(.starfield) {
+#homeScreen > :not(.star-canvas),
+#preparationScreen > :not(.star-canvas) {
   position: relative;
   z-index: 1;
 }
 
-.starfield {
+.star-canvas {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
-.stars {
-  position: absolute;
-  inset: 0;
-  display: block;
-  transform: translateZ(0);
-  will-change: opacity;
-}
-
-.stars-a {
-  background-image:
-    radial-gradient(circle at 8% 12%, rgba(230,236,255,.78) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 20% 28%, rgba(214,226,255,.62) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 36% 10%, rgba(242,245,255,.72) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 52% 22%, rgba(215,228,255,.55) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 68% 8%, rgba(239,243,255,.66) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 82% 19%, rgba(219,231,255,.62) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 94% 31%, rgba(235,240,255,.72) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 14% 46%, rgba(226,236,255,.55) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 30% 57%, rgba(240,244,255,.62) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 48% 43%, rgba(221,232,255,.55) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 63% 54%, rgba(240,244,255,.72) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 77% 41%, rgba(218,229,255,.60) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 89% 62%, rgba(236,241,255,.70) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 6% 74%, rgba(220,231,255,.58) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 25% 84%, rgba(237,242,255,.66) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 43% 72%, rgba(219,231,255,.56) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 59% 88%, rgba(239,244,255,.64) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 72% 76%, rgba(217,229,255,.56) 0 1px, transparent 1.4px),
-    radial-gradient(circle at 91% 86%, rgba(235,241,255,.70) 0 1px, transparent 1.4px);
-  animation: starBreathA 10s ease-in-out infinite alternate;
-}
-
-.stars-b {
-  background-image:
-    radial-gradient(circle at 12% 21%, rgba(226,236,255,.9) 0 1.25px, transparent 1.9px),
-    radial-gradient(circle at 27% 15%, rgba(205,220,255,.78) 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 45% 31%, rgba(242,246,255,.88) 0 1.3px, transparent 2px),
-    radial-gradient(circle at 61% 17%, rgba(213,226,255,.82) 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 75% 34%, rgba(240,244,255,.86) 0 1.25px, transparent 2px),
-    radial-gradient(circle at 88% 11%, rgba(212,226,255,.76) 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 18% 61%, rgba(240,244,255,.84) 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 39% 78%, rgba(211,225,255,.80) 0 1.25px, transparent 2px),
-    radial-gradient(circle at 67% 67%, rgba(241,245,255,.86) 0 1.3px, transparent 2px),
-    radial-gradient(circle at 84% 79%, rgba(210,224,255,.78) 0 1.2px, transparent 1.9px);
-  animation: starBreathB 13s ease-in-out 1.8s infinite alternate;
-}
-
-.stars-c {
-  background-image:
-    radial-gradient(circle at 17% 36%, rgba(245,248,255,.96) 0 1.6px, rgba(207,220,255,.22) 2px, transparent 3.4px),
-    radial-gradient(circle at 71% 24%, rgba(245,248,255,.94) 0 1.5px, rgba(205,219,255,.20) 2px, transparent 3.2px),
-    radial-gradient(circle at 86% 53%, rgba(245,248,255,.94) 0 1.5px, rgba(208,221,255,.18) 2px, transparent 3.2px),
-    radial-gradient(circle at 31% 69%, rgba(245,248,255,.92) 0 1.5px, rgba(207,221,255,.18) 2px, transparent 3.2px),
-    radial-gradient(circle at 58% 82%, rgba(245,248,255,.92) 0 1.5px, rgba(207,221,255,.18) 2px, transparent 3.2px);
-  animation: starSparkle 16s ease-in-out 4s infinite;
-}
-
-@keyframes starBreathA {
-  0% { opacity: .18; }
-  55% { opacity: .33; }
-  100% { opacity: .22; }
-}
-
-@keyframes starBreathB {
-  0% { opacity: .12; }
-  45% { opacity: .26; }
-  100% { opacity: .16; }
-}
-
-@keyframes starSparkle {
-  0%, 18%, 42%, 68%, 100% { opacity: .07; }
-  25% { opacity: .22; }
-  52% { opacity: .15; }
-  78% { opacity: .19; }
-}
-
-/* Preparation screen is calmer than home */
-#prepScreen .stars-a { animation-duration: 12s; opacity: .18; }
-#prepScreen .stars-b { animation-duration: 15s; opacity: .12; }
-#prepScreen .stars-c { animation-duration: 19s; opacity: .06; }
-
-/* Course titles use Zen Maru Gothic; UI controls keep the standard font */
-.course-title,
-.course-name,
-[data-course-title] {
+.soft-font {
   font-family: "Zen Maru Gothic", ui-rounded, "Hiragino Maru Gothic ProN",
     "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 }
 
+/* Restore settings button to the upper-right and make the gear more prominent */
+#openSettingsButton {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  right: 14px;
+  left: auto;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 31px;
+  line-height: 1;
+  padding: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .stars { animation: none !important; }
+  .star-canvas {
+    opacity: .9;
+  }
 }

@@ -18,32 +18,32 @@
 <body>
   <main id="app">
     <section id="homeScreen" class="screen active">
-      <div class="starfield" aria-hidden="true"><span class="stars stars-a"></span><span class="stars stars-b"></span><span class="stars stars-c"></span></div>
+      <canvas class="star-canvas" aria-hidden="true"></canvas>
       <button class="icon-button settings-button" id="openSettingsButton" aria-label="設定">⚙︎</button>
 
       <div class="hero">
         <p class="eyebrow">HODOKU</p>
-        <h1>ほどく</h1>
+        <h1 class="soft-font">ほどく</h1>
         <p class="subtitle">一日の緊張を、眠る前にほどく。</p>
       </div>
 
       <div class="course-list" role="radiogroup" aria-label="コース">
         <button class="course-card" data-course="03min" role="radio" aria-checked="false">
           <span class="course-time">3分</span>
-          <strong>今すぐほどく</strong>
+          <strong class="soft-font">今すぐほどく</strong>
           <small>疲れ切った夜に</small>
         </button>
 
         <button class="course-card selected" data-course="07min" role="radio" aria-checked="true">
           <span class="badge">おすすめ</span>
           <span class="course-time">7分</span>
-          <strong>一日の緊張をほどく</strong>
+          <strong class="soft-font">一日の緊張をほどく</strong>
           <small>普段使いの標準コース</small>
         </button>
 
         <button class="course-card" data-course="12min" role="radio" aria-checked="false">
           <span class="course-time">12分</span>
-          <strong>深くほどく</strong>
+          <strong class="soft-font">深くほどく</strong>
           <small>ゆっくり眠りに向かう夜に</small>
         </button>
       </div>
@@ -52,13 +52,14 @@
     </section>
 
     <section id="preparationScreen" class="screen preparation-screen">
+      <canvas class="star-canvas" aria-hidden="true"></canvas>
       <header class="screen-header">
         <button class="back-button" id="backToHomeButton">‹ 戻る</button>
-        <h2>準備</h2>
+        <h2 class="soft-font">準備</h2>
       </header>
 
       <div class="summary-card compact-course-summary" aria-label="選択中のコース">
-        <p id="selectedCourseTime" class="summary-time">7分</p>
+        <p id="selectedCourseTime" class="summary-time soft-font">7分</p>
         <h3 id="selectedCourseTitle" class="visually-hidden">一日の緊張をほどく</h3>
       </div>
 
@@ -99,7 +100,7 @@
     <section id="sessionScreen" class="screen session-screen">
       <div class="session-content">
         <p id="sessionPhase" class="session-phase">ガイダンス中</p>
-        <h2 id="sessionText">ゆっくり、力を抜いていきます。</h2>
+        <h2 id="sessionText" class="soft-font">ゆっくり、力を抜いていきます。</h2>
         <p id="sessionElapsed" class="session-time">00:00</p>
         <div class="breathing-orb" aria-hidden="true"></div>
       </div>

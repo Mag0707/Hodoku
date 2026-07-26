@@ -129,27 +129,35 @@ function refreshGuidanceModeUi() {
 
 function openGuidanceModeSheet() {
   refreshGuidanceModeUi();
-  document.getElementById("guidanceModeSheet").hidden = false;
+  const sheet = document.getElementById("guidanceModeSheet");
+  if (sheet) sheet.hidden = false;
 }
 
 function closeGuidanceModeSheet() {
-  document.getElementById("guidanceModeSheet").hidden = true;
+  const sheet = document.getElementById("guidanceModeSheet");
+  if (sheet) sheet.hidden = true;
 }
 
-document.getElementById("guidanceModeButton").addEventListener("click", openGuidanceModeSheet);
-document.getElementById("closeGuidanceModeSheet").addEventListener("click", closeGuidanceModeSheet);
+function initGuidanceModeControls() {
+  const guidanceModeButton = document.getElementById("guidanceModeButton");
+  const closeGuidanceModeButton = document.getElementById("closeGuidanceModeSheet");
+  const guidanceModeSheet = document.getElementById("guidanceModeSheet");
 
-document.getElementById("guidanceModeSheet").addEventListener("click", (event) => {
-  if (event.target === event.currentTarget) closeGuidanceModeSheet();
-});
+  guidanceModeButton?.addEventListener("click", openGuidanceModeSheet);
+  closeGuidanceModeButton?.addEventListener("click", closeGuidanceModeSheet);
 
-document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
-  button.addEventListener("click", () => {
-    localStorage.setItem(GUIDANCE_MODE_KEY, button.dataset.guidanceMode);
-    refreshGuidanceModeUi();
-    closeGuidanceModeSheet();
+  guidanceModeSheet?.addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) closeGuidanceModeSheet();
   });
-});
+
+  document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      localStorage.setItem(GUIDANCE_MODE_KEY, button.dataset.guidanceMode);
+      refreshGuidanceModeUi();
+      closeGuidanceModeSheet();
+    });
+  });
+}
 
 
 document.querySelectorAll(".course-card").forEach((card) => {
@@ -594,6 +602,7 @@ if ("serviceWorker" in navigator) {
 }
 
 restoreSettings();
+initGuidanceModeControls();
 refreshGuidanceModeUi();
 showScreen("homeScreen");
 

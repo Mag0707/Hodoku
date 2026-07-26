@@ -883,3 +883,11 @@ h1,
   width: 100%;
   margin-top: 8px;
 }
+
+
+/* v16: ensure the home CTA remains clickable above decorative Canvas */
+#goToPreparationButton {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}

@@ -98,69 +98,7 @@ function restoreSettings() {
 
 function selectCourse(course, save = true) {
   state.selectedCourse = course;
-  
-const GUIDANCE_MODE_KEY = "hodoku.guidanceMode";
-
-function getAutomaticGuidanceMode(date = new Date()) {
-  const hour = date.getHours();
-  return hour >= 7 && hour < 20 ? "day" : "night";
-}
-
-function getGuidancePreference() {
-  const saved = localStorage.getItem(GUIDANCE_MODE_KEY);
-  return ["auto", "day", "night"].includes(saved) ? saved : "auto";
-}
-
-function getResolvedGuidanceMode() {
-  const preference = getGuidancePreference();
-  return preference === "auto" ? getAutomaticGuidanceMode() : preference;
-}
-
-function refreshGuidanceModeUi() {
-  const resolved = getResolvedGuidanceMode();
-  const label = document.getElementById("guidanceModeLabel");
-  if (label) label.textContent = resolved === "day" ? "昼用" : "夜用";
-
-  const preference = getGuidancePreference();
-  document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
-    button.classList.toggle("is-selected", button.dataset.guidanceMode === preference);
-  });
-}
-
-function openGuidanceModeSheet() {
-  refreshGuidanceModeUi();
-  const sheet = document.getElementById("guidanceModeSheet");
-  if (sheet) sheet.hidden = false;
-}
-
-function closeGuidanceModeSheet() {
-  const sheet = document.getElementById("guidanceModeSheet");
-  if (sheet) sheet.hidden = true;
-}
-
-function initGuidanceModeControls() {
-  const guidanceModeButton = document.getElementById("guidanceModeButton");
-  const closeGuidanceModeButton = document.getElementById("closeGuidanceModeSheet");
-  const guidanceModeSheet = document.getElementById("guidanceModeSheet");
-
-  guidanceModeButton?.addEventListener("click", openGuidanceModeSheet);
-  closeGuidanceModeButton?.addEventListener("click", closeGuidanceModeSheet);
-
-  guidanceModeSheet?.addEventListener("click", (event) => {
-    if (event.target === event.currentTarget) closeGuidanceModeSheet();
-  });
-
-  document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
-    button.addEventListener("click", () => {
-      localStorage.setItem(GUIDANCE_MODE_KEY, button.dataset.guidanceMode);
-      refreshGuidanceModeUi();
-      closeGuidanceModeSheet();
-    });
-  });
-}
-
-
-document.querySelectorAll(".course-card").forEach((card) => {
+  document.querySelectorAll(".course-card").forEach((card) => {
     const selected = card.dataset.course === course;
     card.classList.toggle("selected", selected);
     card.setAttribute("aria-checked", String(selected));
@@ -216,42 +154,113 @@ function pickRandom(items, count) {
   return copy.slice(0, Math.min(count, copy.length));
 }
 
-async function buildQueue(course) {
-  const mode = getResolvedGuidanceMode();
 
-  const coursePath = mode === "day"
+/* v17: independent day/night guidance mode */
+const GUIDANCE_MODE_KEY = "hodoku.guidanceMode";
+
+function getAutomaticGuidanceMode(date = new Date()) {
+  const hour = date.getHours();
+  return hour >= 7 && hour < 20 ? "day" : "night";
+}
+
+function getGuidancePreference() {
+  const saved = localStorage.getItem(GUIDANCE_MODE_KEY);
+  return ["auto", "day", "night"].includes(saved) ? saved : "auto";
+}
+
+function getResolvedGuidanceMode() {
+  const preference = getGuidancePreference();
+  return preference === "auto" ? getAutomaticGuidanceMode() : preference;
+}
+
+function refreshGuidanceModeUi() {
+  const label = document.getElementById("guidanceModeLabel");
+  if (label) {
+    label.textContent = getResolvedGuidanceMode() === "day" ? "昼用" : "夜用";
+  }
+
+  const preference = getGuidancePreference();
+  document.querySelectorAll("[data-guidance-mode]").forEach((button) => {
+    button.classList.toggle("is-selected", button.dataset.guidanceMode === preference);
+  });
+}
+
+function openGuidanceModeSheet() {
+  const sheet = document.getElementById("guidanceModeSheet");
+  if (!sheet) return;
+  refreshGuidanceModeUi();
+  sheet.hidden = false;
+}
+
+function closeGuidanceModeSheet() {
+  const sheet = document.getElementById("guidanceModeSheet");
+  if (sheet) sheet.hidden = true;
+}
+
+function initGuidanceModeControls() {
+  const button = document.getElementById("guidanceModeButton");
+  const closeButton = document.getElementById("closeGuidanceModeSheet");
+  const sheet = document.getElementById("guidanceModeSheet");
+
+  button?.addEventListener("click", openGuidanceModeSheet);
+  closeButton?.addEventListener("click", closeGuidanceModeSheet);
+
+  sheet?.addEventListener("click", (event) => {
+    if (event.target === sheet) closeGuidanceModeSheet();
+  });
+
+  document.querySelectorAll("[data-guidance-mode]").forEach((choice) => {
+    choice.addEventListener("click", () => {
+      const mode = choice.dataset.guidanceMode;
+      if (!["auto", "day", "night"].includes(mode)) return;
+      localStorage.setItem(GUIDANCE_MODE_KEY, mode);
+      refreshGuidanceModeUi();
+      closeGuidanceModeSheet();
+    });
+  });
+
+  refreshGuidanceModeUi();
+}
+
+
+async function buildQueue(course) {
+  const guidanceMode = getResolvedGuidanceMode();
+
+  const courseManifestPath = guidanceMode === "day"
     ? `./audio/guidance/manifests/day-${course}.json`
     : `./audio/guidance/manifests/${course}.json`;
 
-  const messagesPath = mode === "day"
+  const messagesManifestPath = guidanceMode === "day"
     ? "./audio/guidance/manifests/day-messages.json"
     : "./audio/guidance/manifests/messages.json";
 
   const [courseManifest, messagesManifest] = await Promise.all([
-    fetchJson(coursePath),
-    fetchJson(messagesPath),
+    fetchJson(courseManifestPath),
+    fetchJson(messagesManifestPath),
   ]);
 
   const baseItems = courseManifest.items.map((item) => ({
     ...item,
-    file: mode === "day"
+    file: guidanceMode === "day"
       ? `./audio/guidance/day/${course}/${item.file.split("/").pop()}`
       : `./audio/guidance/${course}/${item.file.split("/").pop()}`,
   }));
 
   const messageCount = COURSE_META[course].randomMessages;
-  const messageSource = mode === "day"
-    ? (messagesManifest.groups?.[course] || messagesManifest[course] || [])
-    : (messagesManifest[course] || messagesManifest.groups?.[course] || []);
+
+  const messageSource = guidanceMode === "day"
+    ? (messagesManifest.groups?.[course] || [])
+    : (messagesManifest[course] || []);
 
   const selectedMessages = pickRandom(messageSource, messageCount).map((item) => ({
     ...item,
-    file: mode === "day"
+    file: guidanceMode === "day"
       ? `./audio/guidance/day/messages/${item.file.split("/").pop()}`
       : `./audio/guidance/messages/${item.file.split("/").pop()}`,
   }));
 
   const insertAt = Math.max(0, baseItems.length - 2);
+
   return [
     ...baseItems.slice(0, insertAt),
     ...selectedMessages,
@@ -496,7 +505,6 @@ document.querySelectorAll(".course-card").forEach((card) => {
 
 document.getElementById("goToPreparationButton").addEventListener("click", () => {
   selectCourse(state.selectedCourse, false);
-  refreshGuidanceModeUi();
   showScreen("preparationScreen");
 });
 
@@ -602,8 +610,6 @@ if ("serviceWorker" in navigator) {
 }
 
 restoreSettings();
-initGuidanceModeControls();
-refreshGuidanceModeUi();
 showScreen("homeScreen");
 
 
@@ -737,3 +743,11 @@ showScreen("homeScreen");
     init();
   }
 })();
+
+
+/* v17: guidance mode init hook */
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGuidanceModeControls, { once: true });
+} else {
+  initGuidanceModeControls();
+}

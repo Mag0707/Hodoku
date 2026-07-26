@@ -791,7 +791,7 @@ h1,
 }
 
 
-/* v15: compact day/night guidance selector */
+/* v17: day/night guidance selector */
 .guidance-mode-row {
   width: 100%;
   min-height: 42px;
@@ -805,6 +805,7 @@ h1,
   justify-content: space-between;
   font: inherit;
   text-align: left;
+  cursor: pointer;
 }
 
 .guidance-mode-key {
@@ -813,11 +814,16 @@ h1,
 }
 
 .guidance-mode-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 14px;
   font-weight: 600;
 }
 
-.guidance-mode-sheet[hidden] { display: none; }
+.guidance-mode-sheet[hidden] {
+  display: none;
+}
 
 .guidance-mode-sheet {
   position: fixed;
@@ -866,9 +872,12 @@ h1,
   gap: 3px;
   text-align: left;
   font: inherit;
+  cursor: pointer;
 }
 
-.guidance-mode-choice > span { font-weight: 600; }
+.guidance-mode-choice > span {
+  font-weight: 600;
+}
 
 .guidance-mode-choice small {
   color: rgba(255,255,255,.58);
@@ -882,12 +891,4 @@ h1,
 .guidance-mode-close {
   width: 100%;
   margin-top: 8px;
-}
-
-
-/* v16: ensure the home CTA remains clickable above decorative Canvas */
-#goToPreparationButton {
-  position: relative;
-  z-index: 20;
-  pointer-events: auto;
 }

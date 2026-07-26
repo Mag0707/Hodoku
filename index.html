@@ -63,11 +63,14 @@
         <h3 id="selectedCourseTitle" class="visually-hidden">一日の緊張をほどく</h3>
       </div>
 
-
       <button id="guidanceModeButton" class="guidance-mode-row" type="button" aria-haspopup="dialog">
         <span class="guidance-mode-key">ガイダンス</span>
-        <span class="guidance-mode-value"><span id="guidanceModeLabel">昼用</span><span aria-hidden="true"> ›</span></span>
+        <span class="guidance-mode-value">
+          <span id="guidanceModeLabel">昼用</span>
+          <span aria-hidden="true">›</span>
+        </span>
       </button>
+
 
       <div class="setting-group preparation-card bgm-card">
         <label for="bgmSelect">BGM</label>
@@ -129,29 +132,35 @@
 
 
 
-
+    
     <div id="guidanceModeSheet" class="guidance-mode-sheet" hidden>
       <section class="guidance-mode-panel" role="dialog" aria-modal="true" aria-labelledby="guidanceModeTitle">
         <div class="guidance-mode-handle" aria-hidden="true"></div>
         <h2 id="guidanceModeTitle">ガイダンス</h2>
+
         <button class="guidance-mode-choice" type="button" data-guidance-mode="auto">
           <span>自動</span>
           <small>7:00〜19:59は昼用、20:00〜6:59は夜用</small>
         </button>
+
         <button class="guidance-mode-choice" type="button" data-guidance-mode="day">
           <span>昼用</span>
           <small>休憩やお昼寝前</small>
         </button>
+
         <button class="guidance-mode-choice" type="button" data-guidance-mode="night">
           <span>夜用</span>
           <small>就寝前</small>
         </button>
-        <button id="closeGuidanceModeSheet" class="secondary-button guidance-mode-close" type="button">閉じる</button>
+
+        <button id="closeGuidanceModeSheet" class="secondary-button guidance-mode-close" type="button">
+          閉じる
+        </button>
       </section>
     </div>
 
 
-    <div id="settingsModal" class="modal-backdrop" hidden>
+<div id="settingsModal" class="modal-backdrop" hidden>
       <section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
         <header class="modal-header">
           <h2 id="settingsModalTitle">設定</h2>

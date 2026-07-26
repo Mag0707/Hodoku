@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "period": "day",
+  "course": "03min",
+  "model": "gpt-4o-mini-tts",
+  "voice": "onyx",
+  "items": [
+    {
+      "id": "day-03min-001",
+      "file": "../day/03min/001.mp3",
+      "text": "ラクな姿勢になってください。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-03min-002",
+      "file": "../day/03min/002.mp3",
+      "text": "目を閉じても、開けたままでも大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-003",
+      "file": "../day/03min/003.mp3",
+      "text": "ゆっくり息を吸って。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-03min-004",
+      "file": "../day/03min/004.mp3",
+      "text": "それより少し長く、息を吐きます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-03min-005",
+      "file": "../day/03min/005.mp3",
+      "text": "もう一度。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-03min-006",
+      "file": "../day/03min/006.mp3",
+      "text": "吸って。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-03min-007",
+      "file": "../day/03min/007.mp3",
+      "text": "ゆっくり、吐いて。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-03min-008",
+      "file": "../day/03min/008.mp3",
+      "text": "あごに力が入っていたら、少しゆるめます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-009",
+      "file": "../day/03min/009.mp3",
+      "text": "肩を、ほんの少し下ろしてみましょう。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-010",
+      "file": "../day/03min/010.mp3",
+      "text": "手も、ラクにしてください。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-011",
+      "file": "../day/03min/011.mp3",
+      "text": "指先まで、力を抜いていきます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-012",
+      "file": "../day/03min/012.mp3",
+      "text": "今は、何かを頑張る時間ではありません。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-013",
+      "file": "../day/03min/013.mp3",
+      "text": "ほんの少し、身体を休ませる時間です。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-03min-014",
+      "file": "../day/03min/014.mp3",
+      "text": "考えごとが浮かんでも、そのままで大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-015",
+      "file": "../day/03min/015.mp3",
+      "text": "追いかけなくていいです。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-016",
+      "file": "../day/03min/016.mp3",
+      "text": "今ここで、ひと息つけたら、それで十分です。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-03min-017",
+      "file": "../day/03min/017.mp3",
+      "text": "このまま少し眠ってもいいし、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-018",
+      "file": "../day/03min/018.mp3",
+      "text": "ただ休んでいるだけでも大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-03min-019",
+      "file": "../day/03min/019.mp3",
+      "text": "身体を、そのまま預けてください。",
+      "wait_ms": 3400
+    }
+  ]
+}

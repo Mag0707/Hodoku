@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "period": "day",
+  "model": "gpt-4o-mini-tts",
+  "voice": "onyx",
+  "groups": {
+    "03min": [
+      {
+        "id": "day-message-03min-01",
+        "file": "../day/messages/03min-01.mp3",
+        "text": "今ここで休もうと思えただけでも、十分です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-03min-02",
+        "file": "../day/messages/03min-02.mp3",
+        "text": "ちょっと立ち止まっても、大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-03min-03",
+        "file": "../day/messages/03min-03.mp3",
+        "text": "今日もここまで、ちゃんとやってきました。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-03min-04",
+        "file": "../day/messages/03min-04.mp3",
+        "text": "今だけは、何もしなくて大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-03min-05",
+        "file": "../day/messages/03min-05.mp3",
+        "text": "少し休むくらい、遠慮しなくて大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-03min-06",
+        "file": "../day/messages/03min-06.mp3",
+        "text": "身体を休ませる時間も、ちゃんと大切な時間です。",
+        "wait_ms": 3400
+      }
+    ],
+    "07min": [
+      {
+        "id": "day-message-07min-01",
+        "file": "../day/messages/07min-01.mp3",
+        "text": "ここまで頑張った分、今は少し休んでください。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-02",
+        "file": "../day/messages/07min-02.mp3",
+        "text": "急いで戻らなくても大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-03",
+        "file": "../day/messages/07min-03.mp3",
+        "text": "今は、自分の身体を休ませることを優先していいです。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-04",
+        "file": "../day/messages/07min-04.mp3",
+        "text": "何もしない時間があっても大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-05",
+        "file": "../day/messages/07min-05.mp3",
+        "text": "少しくらい力を抜いても、何も悪くありません。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-06",
+        "file": "../day/messages/07min-06.mp3",
+        "text": "休んだからといって、頑張っていないことにはなりません。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-07",
+        "file": "../day/messages/07min-07.mp3",
+        "text": "今はひと息ついて、それからで大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-07min-08",
+        "file": "../day/messages/07min-08.mp3",
+        "text": "ここにいる間だけは、自分を急かさなくて大丈夫です。",
+        "wait_ms": 3400
+      }
+    ],
+    "12min": [
+      {
+        "id": "day-message-12min-01",
+        "file": "../day/messages/12min-01.mp3",
+        "text": "今日ここまで動いてきた身体を、少し休ませてあげましょう。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-02",
+        "file": "../day/messages/12min-02.mp3",
+        "text": "今すぐ何かを解決しなくても大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-03",
+        "file": "../day/messages/12min-03.mp3",
+        "text": "あとでできることは、あとで大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-04",
+        "file": "../day/messages/12min-04.mp3",
+        "text": "今は、止まっていていい時間です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-05",
+        "file": "../day/messages/12min-05.mp3",
+        "text": "休むことに理由はいりません。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-06",
+        "file": "../day/messages/12min-06.mp3",
+        "text": "少し眠っても、ただ横になっていても、どちらでも大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-07",
+        "file": "../day/messages/12min-07.mp3",
+        "text": "今ここでは、何かをうまくやろうとしなくて大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-08",
+        "file": "../day/messages/12min-08.mp3",
+        "text": "身体が休みたがっているなら、そのまま休ませてあげてください。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-09",
+        "file": "../day/messages/12min-09.mp3",
+        "text": "次のことを考えるのは、この時間が終わってからで大丈夫です。",
+        "wait_ms": 3400
+      },
+      {
+        "id": "day-message-12min-10",
+        "file": "../day/messages/12min-10.mp3",
+        "text": "今はただ、力を抜いているだけで十分です。",
+        "wait_ms": 3400
+      }
+    ]
+  }
+}

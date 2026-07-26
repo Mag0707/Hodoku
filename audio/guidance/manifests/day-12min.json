@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "period": "day",
+  "course": "12min",
+  "model": "gpt-4o-mini-tts",
+  "voice": "onyx",
+  "items": [
+    {
+      "id": "day-12min-001",
+      "file": "../day/12min/001.mp3",
+      "text": "まず、できるだけラクな姿勢を見つけてください。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-002",
+      "file": "../day/12min/002.mp3",
+      "text": "横になっても、座ったままでも大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-003",
+      "file": "../day/12min/003.mp3",
+      "text": "身体を支えている場所に、少しずつ重さを預けます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-004",
+      "file": "../day/12min/004.mp3",
+      "text": "今からしばらく、何かを頑張る必要はありません。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-005",
+      "file": "../day/12min/005.mp3",
+      "text": "目を閉じても、開けたままでも大丈夫です。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-006",
+      "file": "../day/12min/006.mp3",
+      "text": "呼吸を感じてみます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-007",
+      "file": "../day/12min/007.mp3",
+      "text": "ゆっくり息を吸って。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-008",
+      "file": "../day/12min/008.mp3",
+      "text": "少し長めに、息を吐きます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-009",
+      "file": "../day/12min/009.mp3",
+      "text": "もう一度。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-010",
+      "file": "../day/12min/010.mp3",
+      "text": "吸って。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-011",
+      "file": "../day/12min/011.mp3",
+      "text": "ゆっくり、吐いて。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-012",
+      "file": "../day/12min/012.mp3",
+      "text": "呼吸を深くしようとしなくて大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-013",
+      "file": "../day/12min/013.mp3",
+      "text": "自然な呼吸に戻していきます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-014",
+      "file": "../day/12min/014.mp3",
+      "text": "まず、ひたいに意識を向けます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-015",
+      "file": "../day/12min/015.mp3",
+      "text": "しわを作るように、少しだけ力を入れて。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-016",
+      "file": "../day/12min/016.mp3",
+      "text": "ゆるめます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-017",
+      "file": "../day/12min/017.mp3",
+      "text": "目のまわりも、ラクにします。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-018",
+      "file": "../day/12min/018.mp3",
+      "text": "目を閉じているなら、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-019",
+      "file": "../day/12min/019.mp3",
+      "text": "まぶたの重さをそのまま感じます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-020",
+      "file": "../day/12min/020.mp3",
+      "text": "次に、あごです。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-021",
+      "file": "../day/12min/021.mp3",
+      "text": "歯を食いしばっていたら、ゆるめます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-022",
+      "file": "../day/12min/022.mp3",
+      "text": "口の中まで、ラクにしていきます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-023",
+      "file": "../day/12min/023.mp3",
+      "text": "首。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-024",
+      "file": "../day/12min/024.mp3",
+      "text": "肩。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-025",
+      "file": "../day/12min/025.mp3",
+      "text": "肩に少しだけ力を入れて。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-026",
+      "file": "../day/12min/026.mp3",
+      "text": "そのまま、ゆっくり抜きます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-027",
+      "file": "../day/12min/027.mp3",
+      "text": "肩が下がっていくのを感じます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-028",
+      "file": "../day/12min/028.mp3",
+      "text": "腕に意識を移します。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-029",
+      "file": "../day/12min/029.mp3",
+      "text": "上腕。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-030",
+      "file": "../day/12min/030.mp3",
+      "text": "ひじ。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-031",
+      "file": "../day/12min/031.mp3",
+      "text": "前腕。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-032",
+      "file": "../day/12min/032.mp3",
+      "text": "手首。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-033",
+      "file": "../day/12min/033.mp3",
+      "text": "手のひら。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-034",
+      "file": "../day/12min/034.mp3",
+      "text": "指先まで。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-035",
+      "file": "../day/12min/035.mp3",
+      "text": "身体を支えなくてもいいところは、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-036",
+      "file": "../day/12min/036.mp3",
+      "text": "そのまま重さを預けてください。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-037",
+      "file": "../day/12min/037.mp3",
+      "text": "胸とお腹です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-038",
+      "file": "../day/12min/038.mp3",
+      "text": "呼吸に合わせて、自然に動いています。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-039",
+      "file": "../day/12min/039.mp3",
+      "text": "吸うたびに少し広がって。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-040",
+      "file": "../day/12min/040.mp3",
+      "text": "吐くたびに、少しゆるんでいきます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-041",
+      "file": "../day/12min/041.mp3",
+      "text": "背中にも意識を向けます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-042",
+      "file": "../day/12min/042.mp3",
+      "text": "身体を支えている場所へ、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-043",
+      "file": "../day/12min/043.mp3",
+      "text": "背中の重さを預けます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-044",
+      "file": "../day/12min/044.mp3",
+      "text": "腰。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-045",
+      "file": "../day/12min/045.mp3",
+      "text": "お尻。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-046",
+      "file": "../day/12min/046.mp3",
+      "text": "太もも。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-047",
+      "file": "../day/12min/047.mp3",
+      "text": "ひざ。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-048",
+      "file": "../day/12min/048.mp3",
+      "text": "ふくらはぎ。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-049",
+      "file": "../day/12min/049.mp3",
+      "text": "足首。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-050",
+      "file": "../day/12min/050.mp3",
+      "text": "足の先まで。",
+      "wait_ms": 1900
+    },
+    {
+      "id": "day-12min-051",
+      "file": "../day/12min/051.mp3",
+      "text": "一つずつ、力を抜いていきます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-052",
+      "file": "../day/12min/052.mp3",
+      "text": "全身を一度にうまくゆるめなくても大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-053",
+      "file": "../day/12min/053.mp3",
+      "text": "気づいた場所から、少しずつで十分です。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-054",
+      "file": "../day/12min/054.mp3",
+      "text": "今、頭に浮かんでいる予定や、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-055",
+      "file": "../day/12min/055.mp3",
+      "text": "やらなくてはいけないことがあっても、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-056",
+      "file": "../day/12min/056.mp3",
+      "text": "今だけはいったん置いておきます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-057",
+      "file": "../day/12min/057.mp3",
+      "text": "忘れなくて大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-058",
+      "file": "../day/12min/058.mp3",
+      "text": "あとで、また戻ってくればいいです。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-059",
+      "file": "../day/12min/059.mp3",
+      "text": "今はその前に、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-060",
+      "file": "../day/12min/060.mp3",
+      "text": "ほんの少し休みます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-061",
+      "file": "../day/12min/061.mp3",
+      "text": "休むことも、次に動くための時間です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-062",
+      "file": "../day/12min/062.mp3",
+      "text": "何もしていないように感じても、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-063",
+      "file": "../day/12min/063.mp3",
+      "text": "身体はちゃんと休んでいます。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-064",
+      "file": "../day/12min/064.mp3",
+      "text": "もし眠くなったら、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-065",
+      "file": "../day/12min/065.mp3",
+      "text": "そのまま少し眠って大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-066",
+      "file": "../day/12min/066.mp3",
+      "text": "眠らなくても、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-067",
+      "file": "../day/12min/067.mp3",
+      "text": "目を閉じて休んでいるだけで十分です。",
+      "wait_ms": 3400
+    },
+    {
+      "id": "day-12min-068",
+      "file": "../day/12min/068.mp3",
+      "text": "今すぐ元気にならなくても大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-069",
+      "file": "../day/12min/069.mp3",
+      "text": "今すぐ気持ちを切り替えなくても大丈夫です。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-070",
+      "file": "../day/12min/070.mp3",
+      "text": "ただ、ここで少し力を抜きます。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-071",
+      "file": "../day/12min/071.mp3",
+      "text": "呼吸を感じながら、",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-072",
+      "file": "../day/12min/072.mp3",
+      "text": "そのまま身体を休ませてください。",
+      "wait_ms": 2600
+    },
+    {
+      "id": "day-12min-073",
+      "file": "../day/12min/073.mp3",
+      "text": "もう少しだけ、この静かな時間を続けましょう。",
+      "wait_ms": 3400
+    }
+  ]
+}

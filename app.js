@@ -533,8 +533,8 @@ showScreen("homeScreen");
       minAlpha: 0.12, maxAlpha: 0.46
     },
     preparationScreen: {
-      count: 40, minR: 0.38, maxR: 0.88,
-      minAlpha: 0.08, maxAlpha: 0.32
+      count: 70, minR: 0.42, maxR: 1.05,
+      minAlpha: 0.12, maxAlpha: 0.46
     }
   };
 

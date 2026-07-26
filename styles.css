@@ -746,3 +746,46 @@ h1,
     opacity: .9;
   }
 }
+
+
+/* v11: force settings gear to the upper-right */
+#openSettingsButton {
+  position: fixed !important;
+  top: calc(env(safe-area-inset-top) + 12px) !important;
+  right: 14px !important;
+  left: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 1000 !important;
+}
+
+/* v11: increase spacing in preparation screen without moving the Start button */
+#preparationScreen .summary-time {
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+#preparationScreen .prep-card,
+#preparationScreen .setting-card,
+#preparationScreen .control-card {
+  margin-bottom: 18px;
+}
+
+#preparationScreen .prep-card:first-of-type,
+#preparationScreen .setting-card:first-of-type,
+#preparationScreen .control-card:first-of-type {
+  margin-top: 4px;
+}
+
+/* More breathing room inside the three preparation groups */
+#preparationScreen .prep-card,
+#preparationScreen .setting-card,
+#preparationScreen .control-card {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* Keep the Start button anchored where it already is */
+#preparationScreen #startSessionButton {
+  margin-top: auto;
+}

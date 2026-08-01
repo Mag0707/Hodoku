@@ -117,6 +117,14 @@ const CACHE_NAME = "hodoku-v7";
 - URL：https://pixabay.com/users/gigidelaromusic-51134264/
 - 使用ファイル：`audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3`
 
+### 背景クレジット
+
+#### 星空背景
+
+- 提供：PixelLabs
+- URL：https://pixabay.com/users/pixellabs-38195676/
+- 使用ファイル：`images/pixellabs-starry-night-10159718.png`
+
 ### フォントクレジット
 
 #### Zen Maru Gothic
@@ -128,7 +136,7 @@ const CACHE_NAME = "hodoku-v7";
 
 ### ライセンスについて
 
-BGMはPixabayから取得した素材を使用しています。Zen Maru GothicはSIL Open Font License 1.1に基づいて使用しています。
+BGMと背景画像はPixabayから取得した素材を使用しています。Zen Maru GothicはSIL Open Font License 1.1に基づいて使用しています。
 
 公開・配布前に、使用時点のPixabay Content Licenseと各素材ページの条件を確認してください。
 
@@ -260,6 +268,14 @@ const CACHE_NAME = "hodoku-v7";
 - URL: https://pixabay.com/users/gigidelaromusic-51134264/
 - File used: `audio/bgm/eryliaa-gentle-rain-for-relaxation-and-sleep-337279.mp3`
 
+### Background credit
+
+#### Starry-night background
+
+- Creator: PixelLabs
+- URL: https://pixabay.com/users/pixellabs-38195676/
+- File used: `images/pixellabs-starry-night-10159718.png`
+
 ### Font credit
 
 #### Zen Maru Gothic
@@ -271,7 +287,7 @@ const CACHE_NAME = "hodoku-v7";
 
 ### Licensing
 
-The background music was obtained from Pixabay. Zen Maru Gothic is used under the SIL Open Font License 1.1.
+The background music and background image were obtained from Pixabay. Zen Maru Gothic is used under the SIL Open Font License 1.1.
 
 Before publishing or redistributing the app, review the current Pixabay Content License and the conditions shown on each asset page.
 

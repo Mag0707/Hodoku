@@ -1,4 +1,4 @@
-const CACHE_NAME = "hodoku-v17";
+const CACHE_NAME = "hodoku-v18";
 
 const APP_SHELL = [
   "./",
@@ -6,6 +6,7 @@ const APP_SHELL = [
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",
+  "./images/pixellabs-starry-night-10159718.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./audio/guidance/manifests/03min.json",

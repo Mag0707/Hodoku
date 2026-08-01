@@ -694,30 +694,6 @@ h1,
 
 
 
-/* v10: Canvas starfield on home/preparation only */
-#homeScreen,
-#preparationScreen {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  background: linear-gradient(180deg, #080d1a 0%, #0b1121 48%, #090e1a 100%);
-}
-
-#homeScreen > :not(.star-canvas),
-#preparationScreen > :not(.star-canvas) {
-  position: relative;
-  z-index: 1;
-}
-
-.star-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .soft-font {
   font-family: "Zen Maru Gothic", ui-rounded, "Hiragino Maru Gothic ProN",
     "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
@@ -740,13 +716,6 @@ h1,
   line-height: 1;
   padding: 0;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .star-canvas {
-    opacity: .9;
-  }
-}
-
 
 /* v11: force settings gear to the upper-right */
 #openSettingsButton {
@@ -891,4 +860,19 @@ h1,
 .guidance-mode-close {
   width: 100%;
   margin-top: 8px;
+}
+
+
+/* v18: PixelLabs starry-night image background */
+#homeScreen,
+#preparationScreen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #080d1a;
+  background-image:
+    linear-gradient(rgba(5, 8, 18, 0.18), rgba(5, 8, 18, 0.18)),
+    url("./images/pixellabs-starry-night-10159718.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
